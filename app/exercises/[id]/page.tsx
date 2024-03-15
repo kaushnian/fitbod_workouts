@@ -1,5 +1,6 @@
 import { fetchExercises } from '@/app/lib/data';
 import MainHeading from '@/app/ui/main_heading';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 type ExerciseProps = {
@@ -18,6 +19,10 @@ export default async function Exercise({ params }: ExerciseProps) {
   return (
     <>
       <MainHeading>{exercise.name}</MainHeading>
+
+      <div className="w-[150px] h-[150px] relative m-auto mb-8">
+        <Image src={exercise.image} alt={exercise.name} layout="fill" priority />
+      </div>
     </>
   );
 }
