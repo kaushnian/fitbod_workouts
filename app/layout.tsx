@@ -14,11 +14,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="min-h-full flex flex-col">
-      <body className={`${inter.className} grow flex flex-col`}>
+      <body className={`${inter.className} flex grow flex-col`}>
         <Header />
 
-        <main className="flex-1 bg-gradient-to-b from-fill-gradient-start to-fill-gradient-end to-[125%]">
-          {children}
+        <main className="grow bg-gradient-to-b from-fill-gradient-start to-fill-gradient-end to-[125%]">
+          <div className="sm:max-w-[722px] sm:m-auto">{children}</div>
         </main>
 
         <Footer />
