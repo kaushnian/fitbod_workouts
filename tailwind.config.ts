@@ -15,6 +15,8 @@ const config: Config = {
           end: '#a5ccf9',
         },
       },
+      stroke: '#000',
+      white: '#fff',
     },
     screens: {
       sm: '329px',
