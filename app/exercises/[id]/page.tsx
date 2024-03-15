@@ -1,4 +1,5 @@
 import { fetchExercises } from '@/app/lib/data';
+import MainHeading from '@/app/ui/main_heading';
 import { notFound } from 'next/navigation';
 
 type ExerciseProps = {
@@ -14,5 +15,9 @@ export default async function Exercise({ params }: ExerciseProps) {
     notFound();
   }
 
-  return <>{exercise.name}</>;
+  return (
+    <>
+      <MainHeading>{exercise.name}</MainHeading>
+    </>
+  );
 }

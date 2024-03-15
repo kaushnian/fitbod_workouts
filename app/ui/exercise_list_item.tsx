@@ -20,8 +20,8 @@ export default function ExerciseListItem({ data }: ExerciseListItemProps) {
         </div>
 
         <div className="flex grow flex-col justify-between">
-          <strong>{data.name}</strong>
-          <em>{data.muscle}</em>
+          <strong className="text-base">{data.name}</strong>
+          <p>{data.muscle}</p>
         </div>
 
         <Image

@@ -4,7 +4,7 @@ import './globals.css';
 import Header from './ui/header';
 import Footer from './ui/footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], weight: ['400', '700'] });
 
 export const metadata: Metadata = {
   title: 'Fitbod Workouts',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="min-h-full flex flex-col">
-      <body className={`${inter.className} flex grow flex-col`}>
+      <body className={`${inter.className} flex grow flex-col text-[14px]`}>
         <Header />
 
         <main className="grow bg-gradient-to-b from-fill-gradient-start to-fill-gradient-end to-[125%]">
