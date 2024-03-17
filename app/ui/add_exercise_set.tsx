@@ -10,12 +10,15 @@ export default function AddExerciseSet() {
   const saveToLocalStorage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const reps = Number(e.currentTarget[REPS_INPUT_NAME].value);
-    const weight = Number(e.currentTarget[WEIGHT_INPUT_NAME].value);
+    const form = e.currentTarget;
+
+    const reps = Number(form[REPS_INPUT_NAME].value);
+    const weight = Number(form[WEIGHT_INPUT_NAME].value);
 
     if (!reps || !weight) return;
 
     saveExerciseSet({ reps, weight });
+    form.reset();
   };
 
   return (
