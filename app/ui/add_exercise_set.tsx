@@ -10,10 +10,12 @@ export default function AddExerciseSet() {
   const saveToLocalStorage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    saveExerciseSet({
-      reps: Number(e.currentTarget[REPS_INPUT_NAME].value) || 0,
-      weight: Number(e.currentTarget[WEIGHT_INPUT_NAME].value) || 0,
-    });
+    const reps = Number(e.currentTarget[REPS_INPUT_NAME].value);
+    const weight = Number(e.currentTarget[WEIGHT_INPUT_NAME].value);
+
+    if (!reps || !weight) return;
+
+    saveExerciseSet({ reps, weight });
   };
 
   return (
@@ -25,7 +27,7 @@ export default function AddExerciseSet() {
 
         <TextInput type="number" name={WEIGHT_INPUT_NAME} label="Weight" />
 
-        <button className="w-[42px] h-[35px] text-white bg-fill-primary leading-[35px] rounded-lg ml-4">
+        <button className="w-[42px] h-[35px] text-white bg-fill-primary leading-[35px] text-2xl rounded-lg ml-4">
           +
         </button>
       </form>
