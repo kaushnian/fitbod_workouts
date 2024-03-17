@@ -12,8 +12,8 @@ export default function TextInput({ ...props }: TextInputProps) {
 
       <input
         id={props.name}
-        {...props}
         className="border border-black rounded-xl h-[35px] px-2 w-[72px]"
+        {...props}
       />
     </div>
   );

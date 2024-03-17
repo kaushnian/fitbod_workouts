@@ -1,5 +1,5 @@
 import { fetchExercises } from '@/app/lib/data';
-import AddSetForm from '@/app/ui/add_set_form';
+import AddExerciseSet from '@/app/ui/add_exercise_set';
 import MainHeading from '@/app/ui/main_heading';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -25,7 +25,7 @@ export default async function Exercise({ params }: ExerciseProps) {
         <Image src={exercise.image} alt={exercise.name} layout="fill" priority />
       </div>
 
-      <AddSetForm />
+      <AddExerciseSet />
     </>
   );
 }
