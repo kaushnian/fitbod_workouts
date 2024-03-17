@@ -18,7 +18,9 @@ export const STORAGE_EVENT = 'storage';
 const storageChangeEvent = new Event(STORAGE_EVENT);
 
 export function getExerciseSetsByDate(): ExerciseSetsByDate {
-  return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  if (typeof window === 'undefined') return {};
+
+  return JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '{}');
 }
 
 /**
@@ -39,7 +41,7 @@ export function saveExerciseSet(exerciseSet: ExerciseSet) {
   const today = new Date().toLocaleDateString();
   const exerciseSets = getExerciseSetsByDate();
 
-  localStorage.setItem(
+  window.localStorage.setItem(
     STORAGE_KEY,
     JSON.stringify({
       ...exerciseSets,
