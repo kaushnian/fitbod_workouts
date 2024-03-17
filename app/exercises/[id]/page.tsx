@@ -32,9 +32,9 @@ export default async function Exercise({ params }: ExerciseProps) {
         />
       </div>
 
-      <AddExerciseSet />
+      <AddExerciseSet exerciseId={exercise.id} />
 
-      <Performances />
+      <Performances exerciseId={exercise.id} />
     </>
   );
 }

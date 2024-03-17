@@ -2,11 +2,16 @@
 
 import { saveExerciseSet } from '../lib/storage';
 import TextInput from './text_input';
+import { ExerciseItem } from './exercise_list_item';
 
 const REPS_INPUT_NAME = 'reps';
 const WEIGHT_INPUT_NAME = 'weight';
 
-export default function AddExerciseSet() {
+type AddExerciseSetProps = {
+  exerciseId: ExerciseItem['id'];
+};
+
+export default function AddExerciseSet({ exerciseId }: AddExerciseSetProps) {
   const saveToLocalStorage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -17,7 +22,7 @@ export default function AddExerciseSet() {
 
     if (!reps || !weight) return;
 
-    saveExerciseSet({ reps, weight });
+    saveExerciseSet(exerciseId, { reps, weight });
     form.reset();
   };
 

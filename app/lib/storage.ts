@@ -1,5 +1,3 @@
-const STORAGE_KEY = 'sets';
-
 export type ExerciseSet = {
   reps: number;
   weight: number;
@@ -17,10 +15,10 @@ export const STORAGE_EVENT = 'storage';
 // that is making the changes.
 const storageChangeEvent = new Event(STORAGE_EVENT);
 
-export function getExerciseSetsByDate(): ExerciseSetsByDate {
+export function getExerciseSetsByDate(storageKey: string): ExerciseSetsByDate {
   if (typeof window === 'undefined') return {};
 
-  return JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '{}');
+  return JSON.parse(window.localStorage.getItem(storageKey) || '{}');
 }
 
 /**
@@ -37,12 +35,12 @@ export function getExerciseSetsByDate(): ExerciseSetsByDate {
  *   ]
  * }
  */
-export function saveExerciseSet(exerciseSet: ExerciseSet) {
+export function saveExerciseSet(storageKey: string, exerciseSet: ExerciseSet) {
   const today = new Date().toLocaleDateString();
-  const exerciseSets = getExerciseSetsByDate();
+  const exerciseSets = getExerciseSetsByDate(storageKey);
 
   window.localStorage.setItem(
-    STORAGE_KEY,
+    storageKey,
     JSON.stringify({
       ...exerciseSets,
       [today]: [...(exerciseSets[today] || []), exerciseSet],
