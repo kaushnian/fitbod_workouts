@@ -8,7 +8,7 @@ export default function Performances() {
 
   return (
     <>
-      <h3 className="text-base font-bold mb-8">Performances:</h3>
+      <h2 className="text-base font-bold mb-8">Performances:</h2>
 
       <ul>
         {Object.entries(exerciseSetsByDate).map(([date, exerciseSets]) => (

@@ -20,7 +20,7 @@ export default function AddExerciseSet() {
 
   return (
     <div className="mb-8">
-      <h3 className="text-base font-bold mb-6">Add set:</h3>
+      <h2 className="text-base font-bold mb-6">Add set:</h2>
 
       <form onSubmit={saveToLocalStorage} className="flex gap-x-4">
         <TextInput type="number" name={REPS_INPUT_NAME} label="Reps" />
