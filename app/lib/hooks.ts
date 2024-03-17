@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-import { STORAGE_EVENT, getExerciseSetsByDate } from './storage';
+import { ExerciseSetsByDate, STORAGE_EVENT, getExerciseSetsByDate } from './storage';
 
 export function useExerciseSetsByDate() {
-  const [exerciseSets, setExerciseSets] = useState(getExerciseSetsByDate());
+  const [exerciseSets, setExerciseSets] = useState<ExerciseSetsByDate>({});
 
   useEffect(() => {
+    setExerciseSets(getExerciseSetsByDate());
+
     const storageChangeHandler = () => {
       setExerciseSets(getExerciseSetsByDate());
     };

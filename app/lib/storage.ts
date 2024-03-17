@@ -5,10 +5,10 @@ export type ExerciseSet = {
   weight: number;
 };
 
-export type ExerciseSetsByDate = {
-  // Local date string in mm/dd/yyyy format
-  [date: string]: ExerciseSet[];
-};
+// Local date string in mm/dd/yyyy format
+type DateString = string;
+
+export type ExerciseSetsByDate = Record<DateString, ExerciseSet[]>;
 
 export const STORAGE_EVENT = 'storage';
 

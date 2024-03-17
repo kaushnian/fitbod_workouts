@@ -23,7 +23,13 @@ export default async function Exercise({ params }: ExerciseProps) {
       <MainHeading>{exercise.name}</MainHeading>
 
       <div className="w-[150px] h-[150px] relative m-auto mb-8">
-        <Image src={exercise.image} alt={exercise.name} layout="fill" priority />
+        <Image
+          src={exercise.image}
+          alt={exercise.name}
+          className="rounded-lg"
+          layout="fill"
+          priority
+        />
       </div>
 
       <AddExerciseSet />

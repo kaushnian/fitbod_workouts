@@ -8,7 +8,7 @@ type PerformanceListItemProps = {
 
 export default function PerformanceListItem({ date, exerciseSets }: PerformanceListItemProps) {
   return (
-    <li>
+    <li className="mb-8">
       <h3 className="font-bold mb-6">{date}</h3>
 
       <RmList exerciseSets={exerciseSets} />
