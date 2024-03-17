@@ -1,6 +1,7 @@
 import { fetchExercises } from '@/app/lib/data';
 import AddExerciseSet from '@/app/ui/add_exercise_set';
 import MainHeading from '@/app/ui/main_heading';
+import Performances from '@/app/ui/performances';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -26,6 +27,8 @@ export default async function Exercise({ params }: ExerciseProps) {
       </div>
 
       <AddExerciseSet />
+
+      <Performances />
     </>
   );
 }

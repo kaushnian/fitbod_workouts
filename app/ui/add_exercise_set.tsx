@@ -19,7 +19,7 @@ export default function AddExerciseSet() {
   };
 
   return (
-    <div>
+    <div className="mb-8">
       <h3 className="text-base font-bold mb-6">Add set:</h3>
 
       <form onSubmit={saveToLocalStorage} className="flex gap-x-4">

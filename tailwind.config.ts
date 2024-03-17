@@ -19,7 +19,7 @@ const config: Config = {
       white: '#fff',
     },
     screens: {
-      sm: '329px',
+      sm: '393px',
     },
   },
   plugins: [],

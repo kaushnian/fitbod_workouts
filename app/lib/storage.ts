@@ -5,12 +5,19 @@ export type ExerciseSet = {
   weight: number;
 };
 
-type ExerciseSetsByDate = {
+export type ExerciseSetsByDate = {
   // Local date string in mm/dd/yyyy format
   [date: string]: ExerciseSet[];
 };
 
-export function getExerciseSets(): ExerciseSetsByDate {
+export const STORAGE_EVENT = 'storage';
+
+// This event must be triggered when the localStorage is updated.
+// Required because the native 'storage' event doesn't work on the same page
+// that is making the changes.
+const storageChangeEvent = new Event(STORAGE_EVENT);
+
+export function getExerciseSetsByDate(): ExerciseSetsByDate {
   return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
 }
 
@@ -30,7 +37,7 @@ export function getExerciseSets(): ExerciseSetsByDate {
  */
 export function saveExerciseSet(exerciseSet: ExerciseSet) {
   const today = new Date().toLocaleDateString();
-  const exerciseSets = getExerciseSets();
+  const exerciseSets = getExerciseSetsByDate();
 
   localStorage.setItem(
     STORAGE_KEY,
@@ -39,4 +46,7 @@ export function saveExerciseSet(exerciseSet: ExerciseSet) {
       [today]: [...(exerciseSets[today] || []), exerciseSet],
     })
   );
+
+  // Dispatch 'storage' event to reflect localStorage changes in the current window.
+  dispatchEvent(storageChangeEvent);
 }
