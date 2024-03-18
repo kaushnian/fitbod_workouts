@@ -13,8 +13,8 @@ type ExerciseListItemProps = {
 
 export default function ExerciseListItem({ data }: ExerciseListItemProps) {
   return (
-    <li className="">
-      <a href={`/exercises/${data.id}`} className="flex gap-x-6">
+    <li>
+      <a href={`/exercises/${data.id}`} className="flex gap-x-6 tablet:gap-x-2 desktop:gap-x-6">
         <div className="w-[60px] h-[60px] relative">
           <Image src={data.image} alt={data.name} layout="fill" priority />
         </div>

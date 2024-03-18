@@ -18,7 +18,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
 
         <main className="grow bg-gradient-to-b from-fill-gradient-start to-fill-gradient-end to-[125%]">
-          <div className="sm:max-w-[722px] sm:m-auto px-8">{children}</div>
+          <div className="tablet:max-w-[722px] tablet:m-auto px-8 tablet:px-2 desktop:px-8">
+            {children}
+          </div>
         </main>
 
         <Footer />

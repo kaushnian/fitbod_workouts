@@ -40,7 +40,7 @@ export default function AddExerciseSet({ exerciseId }: AddExerciseSetProps) {
         <TextInput type="number" name="reps" label="Reps" />
         <TextInput type="number" name="weight" label="Weight" />
 
-        <button className="w-[42px] h-[35px] text-white bg-fill-primary leading-[35px] text-2xl rounded-lg ml-4">
+        <button className="w-[42px] h-[35px] text-white bg-fill-primary leading-[35px] text-2xl rounded-lg ml-auto tablet:ml-4 flex-shrink-0">
           +
         </button>
       </form>

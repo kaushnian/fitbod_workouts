@@ -12,7 +12,7 @@ export default function TextInput({ ...props }: TextInputProps) {
 
       <input
         id={props.name}
-        className="border border-black rounded-xl h-[35px] px-2 w-[72px]"
+        className="border border-black rounded-xl h-[35px] px-2 w-full max-w-[72px]"
         {...props}
       />
     </div>

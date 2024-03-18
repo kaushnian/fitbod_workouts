@@ -19,7 +19,8 @@ const config: Config = {
       white: '#fff',
     },
     screens: {
-      sm: '393px',
+      tablet: '393px',
+      desktop: '640px',
     },
   },
   plugins: [],

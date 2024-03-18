@@ -7,7 +7,7 @@ type RmListProps = {
 
 export default function RmList({ exerciseSets }: RmListProps) {
   return (
-    <ul className="grid sm:grid-cols-2 grid-cols-1 gap-x-12 gap-y-6">
+    <ul className="grid grid-cols-1 tablet:grid-cols-2 gap-x-12 tablet:gap-x-4 desktop:gap-x-12 gap-y-6">
       {exerciseSets.map(({ reps, weight }, index) => (
         <RmListItem key={index} reps={reps} weight={weight} />
       ))}
